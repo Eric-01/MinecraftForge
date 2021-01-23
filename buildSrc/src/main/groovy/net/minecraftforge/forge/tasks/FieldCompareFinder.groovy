@@ -26,12 +26,12 @@ public class FieldCompareFinder extends BytecodeFinder {
     Map<String, Search> fields = [:] as HashMap
     Map<Search, String> fieldsReverse = [:] as HashMap
     Map<String, Set<ObjectTarget>> targets = [:] as TreeMap
-    
+
     @Override
     protected pre() {
         //fields.each{ k,v -> logger.lifecycle("Fields: " + k + ' ' + v) }
     }
-    
+
     @Override
     protected process(ClassNode parent, MethodNode node) {
         def last = null
@@ -52,42 +52,42 @@ public class FieldCompareFinder extends BytecodeFinder {
             last = current
         }
     }
-    
+
     @Override
     protected Object getData() {
-		def ret = [:] as HashMap
-		targets.forEach{ k, v -> 
-			def e = fields.get(k)
-			ret[k] = [
-				cls: e.cls, 
-				name: e.name, 
-				replacement: e.replacement, 
-				targets: v
-			]
-		}
+        def ret = [:] as HashMap
+        targets.forEach{ k, v ->
+            def e = fields.get(k)
+            ret[k] = [
+                cls: e.cls,
+                name: e.name,
+                replacement: e.replacement,
+                targets: v
+            ]
+        }
         return ret
     }
-    
+
     @EqualsAndHashCode(excludes = ['replacement', 'blacklist'])
     public static class Search {
         @Input
         String cls
-        
+
         @Input
         String name
-		
-		@Input
-		String replacement
-    
+
+        @Input
+        String replacement
+
         @Nested
         @Optional
         Set<ObjectTarget> blacklist
-        
+
         @Override
         String toString() {
             return cls + '.' + name
         }
-        
+
         def blacklist(def owner, def name, def desc) {
             if (blacklist == null)
                 blacklist = new HashSet()
@@ -97,7 +97,7 @@ public class FieldCompareFinder extends BytecodeFinder {
             blacklist(owner, '', '')
         }
     }
-    
+
     def fields(Closure cl) {
         new ClosureHelper(cl, {name, ccl ->
             def search = ClosureHelper.apply(new Search(), ccl)

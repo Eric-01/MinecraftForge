@@ -99,7 +99,7 @@ public class RecipeWrapper implements IInventory {
     }
 
     @Override
-    public void clearContent() 
+    public void clearContent()
     {
         for(int i = 0; i < inv.getSlots(); i++)
         {
@@ -118,5 +118,4 @@ public class RecipeWrapper implements IInventory {
     public void startOpen(PlayerEntity player) {}
     @Override
     public void stopOpen(PlayerEntity player) {}
-
 }

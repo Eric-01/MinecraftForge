@@ -126,7 +126,7 @@ public class ForgeInternalHandler
         new ForgeCommand(event.getDispatcher());
         ConfigCommand.register(event.getDispatcher());
     }
-    
+
     private static LootModifierManager INSTANCE;
 
     @SubscribeEvent

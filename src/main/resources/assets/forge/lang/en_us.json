@@ -129,7 +129,7 @@
   "forge.configgui.zombieBaseSummonChance.tooltip": "Base zombie summoning spawn chance. Allows changing the bonus zombie summoning mechanic.",
   "forge.configgui.zombieBaseSummonChance": "Zombie Summon Chance",
   "forge.configgui.zombieBabyChance.tooltip": "Chance that a zombie (or subclass) is a baby. Allows changing the zombie spawning mechanic.",
-  "forge.configgui.zombieBabyChance": "Zombie Baby Chance",
+  "forge.configgui.zombieBabyChance": "Baby Zombie Chance",
   "forge.configgui.logCascadingWorldGeneration.tooltip": "Log cascading chunk generation issues during terrain population.",
   "forge.configgui.logCascadingWorldGeneration": "Log Cascading World Gen",
   "forge.configgui.fixVanillaCascading.tooltip": "Fix vanilla issues that cause worldgen cascading. This DOES change vanilla worldgen so DO NOT report bugs related to world differences if this flag is on.",

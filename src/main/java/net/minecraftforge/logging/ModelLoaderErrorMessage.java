@@ -46,15 +46,15 @@ public class ModelLoaderErrorMessage extends SimpleMessage
 
     private static void buildLookups() {
         if (!reverseBlockMap.isEmpty()) return;
-        
+
         ForgeRegistries.BLOCKS.getValues().stream()
-        	.flatMap(block -> block.getStateDefinition().getPossibleStates().stream())
-        	.forEach(state -> reverseBlockMap.put(BlockModelShapes.stateToModelLocation(state), state));
+            .flatMap(block -> block.getStateDefinition().getPossibleStates().stream())
+            .forEach(state -> reverseBlockMap.put(BlockModelShapes.stateToModelLocation(state), state));
 
         ForgeRegistries.ITEMS.forEach(item ->
         {
-        	ModelResourceLocation memory = getInventoryVariant(ForgeRegistries.ITEMS.getKey(item).toString());
-        	reverseItemMap.put(memory, item.getRegistryName().toString());
+            ModelResourceLocation memory = getInventoryVariant(ForgeRegistries.ITEMS.getKey(item).toString());
+            reverseItemMap.put(memory, item.getRegistryName().toString());
         });
 
     }

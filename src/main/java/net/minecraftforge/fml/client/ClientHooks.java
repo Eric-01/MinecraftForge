@@ -267,7 +267,7 @@ public class ClientHooks
                     }
                     else
                     {
-                        logger.error("      unknown resourcepack type {} : {}", resPack.getClass().getName(), resPack.getName());
+                        logger.error("      unknown resourcepack type {}: {}", resPack.getClass().getName(), resPack.getName());
                     }
                 }
             }

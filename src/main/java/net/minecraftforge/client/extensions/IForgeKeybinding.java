@@ -29,7 +29,7 @@ import net.minecraftforge.client.settings.KeyModifier;
 public interface IForgeKeybinding
 {
     default KeyBinding getKeyBinding() { return (KeyBinding) this; }
-    
+
     @Nonnull InputMappings.Input getKey();
 
     /**
@@ -39,7 +39,7 @@ public interface IForgeKeybinding
     {
         return keyCode != InputMappings.UNKNOWN && keyCode.equals(getKey()) && getKeyConflictContext().isActive() && getKeyModifier().isActive(getKeyConflictContext());
     }
-    
+
     default void setToDefault()
     {
         setKeyModifierAndCode(getKeyModifierDefault(), getKeyBinding().getDefaultKey());

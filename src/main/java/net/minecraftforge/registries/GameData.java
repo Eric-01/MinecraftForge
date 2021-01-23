@@ -184,7 +184,7 @@ public class GameData
         // Dynamic Worldgen
         makeRegistry(BIOMES, Biome.class).disableSync().create();
 
-        // Custom forge registries
+        // Custom Forge registries
         makeRegistry(DATA_SERIALIZERS, DataSerializerEntry.class, 256 /*vanilla space*/, MAX_VARINT).disableSaving().disableOverrides().addCallback(SerializerCallbacks.INSTANCE).create();
         makeRegistry(LOOT_MODIFIER_SERIALIZERS, c(GlobalLootModifierSerializer.class)).disableSaving().disableSync().create();
         makeRegistry(WORLD_TYPES, ForgeWorldType.class).disableSaving().disableSync().create();

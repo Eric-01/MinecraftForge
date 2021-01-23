@@ -24,9 +24,9 @@
     public void close() {
 +   }
 +
-+   //Vanilla used to just grab from the classpath, this breaks dev environments, and Forge runtime
-+   //as forge ships vanilla assets in an 'extra' jar with no classes.
-+   //So find that extra jar using the .mcassetsroot marker.
++   // Vanilla used to just grab from the classpath, this breaks dev environments, and Forge runtime
++   // as Forge ships vanilla assets in an 'extra' jar with no classes.
++   // So find that extra jar using the .mcassetsroot marker.
 +   private InputStream getExtraInputStream(ResourcePackType type, String resource) {
 +      try {
 +         FileSystem fs = field_217810_e.get(type);
